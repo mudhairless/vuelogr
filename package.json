@@ -4,6 +4,10 @@
   "description": "Colored and namespaced logging for Vue2",
   "main": "src/index.js",
   "author": "Ebben Feagan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mudhairless/vuelogr"
+  },
   "license": "MIT",
   "dependencies": {
     "debug": "^3.1.0"
