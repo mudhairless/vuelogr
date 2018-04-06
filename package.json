@@ -1,0 +1,11 @@
+{
+  "name": "vuelogr",
+  "version": "1.0.0",
+  "description": "Colored and namespaced logging for Vue2",
+  "main": "src/index.js",
+  "author": "Ebben Feagan",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^3.1.0"
+  }
+}
