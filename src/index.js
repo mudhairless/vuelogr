@@ -27,9 +27,21 @@ module.exports = {
     Vue.prototype.$log = function() {
       if(this.___logger == null) {
         this.___logger = window.LogBuilder(this.$options.name || 'Vue');
-        this.___logger.enabled = process.env.NODE_ENV !== 'production';
+        this.___logger.enabled = Vue.config.debug;
       }
       this.___logger.apply(null, arguments);
     }
+    Vue.prototype.$logStatus = function(newstate) {
+      if(this.___logger != null) {
+        if(arguments.length === 0) {
+          return this.___logger.enabled;
+        }
+        this.___logger.enabled = newstate;
+        
+return newstate;
+      }
+
+      return false;
+    };
   }
 }
