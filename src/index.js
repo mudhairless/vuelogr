@@ -21,24 +21,26 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+const LogBuilder = require('debug');
+
 module.exports = {
-  install: function(Vue) {
+  install: function (Vue) {
     Vue.prototype.___logger = null;
-    Vue.prototype.$log = function() {
-      if(this.___logger == null) {
-        this.___logger = window.LogBuilder(this.$options.name || 'Vue');
+    Vue.prototype.$log = function () {
+      if (this.___logger == null) {
+        this.___logger = LogBuilder(this.$options.name || 'Vue');
         this.___logger.enabled = Vue.config.debug;
       }
       this.___logger.apply(null, arguments);
     }
-    Vue.prototype.$logStatus = function(newstate) {
-      if(this.___logger != null) {
-        if(arguments.length === 0) {
+    Vue.prototype.$logStatus = function (newstate) {
+      if (this.___logger != null) {
+        if (arguments.length === 0) {
           return this.___logger.enabled;
         }
         this.___logger.enabled = newstate;
-        
-return newstate;
+
+        return newstate;
       }
 
       return false;
