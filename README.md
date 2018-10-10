@@ -14,9 +14,10 @@ Simple but functional logging for Vue Components.
 
 Initialize the plugin where you initialize any other plugins in use with Vue. My recommended method is:
 
-  `Vue.use(require('vuelogr'));`
-
-This plugin uses your NODE_ENV and will only log when it is not equal to production.
+  ```javascript
+  Vue.config.debug = true; // remove to disable logging
+  Vue.use(require('vuelogr'));
+  ```
 
 ### Components
 
