@@ -34,4 +34,16 @@ And to use simply call the $log method on the instance.
 
 ```javascript
   this.$log('This is important info I want to know.');
+
+  this.$log('This message provides context for the second parameter', mydata);
+```
+
+You can enable logging without turning Vue's debug mode on with the $logStatus instance method.
+This also allows you to enable or disable logging for specific components. This function does not
+work at the global level.
+
+```javascript
+  this.$logStatus(true); //Enable logging for this component
+  this.$logStatus(false); //Disable logging for this component
+  const logEnabled = this.$logStatus(); //Get the status of logging for this component
 ```
